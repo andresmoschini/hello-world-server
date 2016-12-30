@@ -1,1 +1,1 @@
-web: node start-web.js
+web: node ./bin/start-web.js
