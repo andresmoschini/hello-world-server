@@ -8,8 +8,8 @@
   },
   "bin": "./bin/start-web.js",
   "scripts": {
-    "test": "make test",
-    "start": "./bin/start-web.js"
+    "test": "mocha ./test --growl --reporter spec",
+    "start": "node ./bin/start-web.js"
   },
   "keywords": [
     "hello",
