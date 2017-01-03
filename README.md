@@ -4,7 +4,7 @@ A very simple node.js http server.
 
 # Port
 
- The server looks for the following when determining the server port
+The server looks for the following when determining the server port
 
 * `--port <integer>` command line flag
 * `process.env["PORT"]`
@@ -40,5 +40,3 @@ curl localhost:3000/
 ```
 
 If you have changed the server port via `process.env["PORT"]` you will need to change the port in the examples above accordingly
-
-
