@@ -13,8 +13,8 @@ describe("Start server", function() {
   });
 
   it("should start server and response to requests with the content \"hello world\"", function(done) {
-    this.slow("1s");
-    require("../app")(port, function(err, reply) {
+    this.slow(1000);
+    require("../bin/app")(port, function(err, reply) {
       should.not.exist(err);
       should.exist(reply);
       should.exist(reply.port, "port field missing in reply");

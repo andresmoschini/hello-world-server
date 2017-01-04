@@ -40,3 +40,12 @@ curl localhost:3000/
 ```
 
 If you have changed the server port via `process.env["PORT"]` you will need to change the port in the examples above accordingly
+
+
+# Useful links
+
+* [Introduction to Using NPM as a Build Tool](https://medium.com/@dabit3/introduction-to-using-npm-as-a-build-tool-b41076f488b0)
+* [NPM vs Yarn Cheat Sheet](https://shift.infinite.red/npm-vs-yarn-cheat-sheet-8755b092e5cc)
+* [TypeScript 2.x, Install a package that defines require](http://stackoverflow.com/questions/31173738/typescript-getting-error-ts2304-cannot-find-name-require#answer-39401237)
+* [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
+* [ts-mocha](https://github.com/piotrwitek/ts-mocha)
