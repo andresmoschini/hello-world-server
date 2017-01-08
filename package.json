@@ -7,8 +7,14 @@
     "test": "test",
     "src": "src"
   },
+  "engines": {
+    "node": "4.5.0"
+  },
   "bin": "bin/start-web.js",
   "scripts": {
+    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+    "heroku-postbuild": "echo This runs afterwards.",
+    "postinstall": "yarn run compile",
     "test": "ts-mocha --project test/ test/**/* --growl --reporter spec",
     "pretest": "yarn run compile",
     "posttest": "echo 'the test has been run!'",
