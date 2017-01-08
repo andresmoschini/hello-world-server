@@ -49,3 +49,9 @@ If you have changed the server port via `process.env["PORT"]` you will need to c
 * [TypeScript 2.x, Install a package that defines require](http://stackoverflow.com/questions/31173738/typescript-getting-error-ts2304-cannot-find-name-require#answer-39401237)
 * [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
 * [ts-mocha](https://github.com/piotrwitek/ts-mocha)
+
+# Doubts
+
+* _devDependencies_ for Heroku (See [documentation](https://devcenter.heroku.com/articles/nodejs-support)),
+ that dependencies are required for build, but not for run, should be moved to dependencies or not?
+ * _postinstall_ is doing the build, for Heroku, it is a good idea? or it should be moved to _heroku-prebuild_?
