@@ -42,7 +42,6 @@
     "@types/should": "^8.1.30",
     "@types/yargs": "6.x.x",
     "eyespect": "0.x.x",
-    "glob": "^7.1.1",
     "mocha": "3.x.x",
     "portfinder": "1.x.x",
     "request": "2.x.x",
