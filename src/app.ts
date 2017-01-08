@@ -1,9 +1,11 @@
-var inspect = require("eyespect").inspector();
-var express = require("express");
-var connect = require("connect");
-var http = require("http");
+import * as express from 'express';
+import * as connect from 'connect';
+import * as http from 'http';
 
-module.exports = function(port, cb) {
+// I do not have eyespect type definition
+var inspect = require("eyespect").inspector();
+
+export default function(port, cb) {
   var app = express();
   // It seems that these lines are not compatible with curent connect version
   //app.use(connect.urlencoded());
