@@ -1,1 +1,1 @@
-web: node bin/start-web.js
+web: yarn run start
