@@ -5,35 +5,24 @@ import * as http from 'http';
 // I do not have eyespect type definition
 var inspect = require("eyespect").inspector();
 
-export default function(port, cb) {
+export default function(port: number, listeningListener?: Function) {
   var app = express();
-  // It seems that these lines are not compatible with curent connect version
-  //app.use(connect.urlencoded());
-  //app.use(connect.json());
-  app.all("*", requestHandler);
-  var server = http.createServer(app);
-  server.listen(port, listenCB);
+  app.all("*", (req, res) => {
 
-  function listenCB() {
-    var output = {
-      server: server,
-      port: port
-    };
-    cb(null, output);
-  }
-
-  function requestHandler(req, res) {
     var output = "hello world\n";
-    console.log("got request");
+
     inspect("got request");
     inspect(req.headers, "req.headers");
     inspect(req.url, "req.url");
     inspect(req.body, "req.body");
+
     var body = "";
+
     if (req.method.toLowerCase() !== "post") {
       return res.end(output);
     }
-    req.on("data", function (data) {
+
+    req.on("data", data => {
       body += data;
       // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
       if (body.length > 1e6) {
@@ -42,11 +31,12 @@ export default function(port, cb) {
       }
     });
 
-    req.on("end", function () {
+    req.on("end", () => {
       inspect(body, "post body");
       res.end(output);
     });
+  });
 
-  }
-
+  var server = http.createServer(app);
+  server.listen(port, listeningListener);
 }
